@@ -117,16 +117,27 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
         // TODO add your handling code here:
+        // Get an array of components in mainWorkArea
         Component[] componentArray = mainWorkArea.getComponents();
-        Component component = componentArray[componentArray.length - 1];
 
-        if (component instanceof LoginScreen loginPanel) {
-            loginPanel.populateSupplierCombo();
+        // Iterate over the components
+        for (Component comp : componentArray) {
+            // Check if the component is an instance of LoginScreen
+            if (comp instanceof LoginScreen) {
+                // If it is, cast it to LoginScreen
+                LoginScreen loginPanel = (LoginScreen) comp;
 
-            CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-            layout.previous(mainWorkArea);
+                // Call populateSupplierCombo
+                loginPanel.populateSupplierCombo();
+
+                // Switch the layout to show this panel
+                CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+                layout.show(mainWorkArea, "LoginScreen");
+
+                // Break the loop as we've found the LoginScreen
+                break;
+            }
         }
-
     }//GEN-LAST:event_btnLogOutActionPerformed
 
     @Override

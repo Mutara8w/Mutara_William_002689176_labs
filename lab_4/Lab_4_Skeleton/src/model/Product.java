@@ -16,6 +16,10 @@ public class Product {
     private String name;
     private int price;
     private final int id;
+
+    public void setLogoImage(ImageIcon logoImage) {
+        this.logoImage = logoImage;
+    }
     private ImageIcon logoImage;
 
     private final ArrayList<Feature> features;
@@ -60,6 +64,10 @@ public class Product {
         return logoImage;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return name;

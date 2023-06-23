@@ -40,6 +40,10 @@ public class Supplier {
         return productCatalog;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return supplierName;

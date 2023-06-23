@@ -180,16 +180,20 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
         // TODO add your handling code here:
-
+        // TODO add your handling code here:
         mainWorkArea.remove(this);
 
         Component[] componentArray = mainWorkArea.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        LoginScreen loginPanel = (LoginScreen) component;
-        loginPanel.populateSupplierCombo();
-
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.previous(mainWorkArea);
+        for (Component component : componentArray) {
+            if (component instanceof LoginScreen) {
+                LoginScreen loginPanel = (LoginScreen) component;
+                loginPanel.populateSupplierCombo();
+                CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+                layout.show(mainWorkArea, "LoginScreen"); // make sure you set the correct name when you add the LoginScreen
+                return;
+            }
+        }
+        throw new RuntimeException("No LoginScreen found in mainWorkArea");
 
     }//GEN-LAST:event_btnLogOutActionPerformed
 

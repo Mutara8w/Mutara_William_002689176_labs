@@ -20,13 +20,9 @@ public class Feature {
     }
 
     public Feature(Product owner, String name, Object value) {
-        // this.owner = owner;
+        this.owner = owner;
         this.name = name;
         this.value = value;
-    }
-
-    public Feature(Product owner) {
-        this.owner = owner;
     }
 
     public Product getOwner() {
