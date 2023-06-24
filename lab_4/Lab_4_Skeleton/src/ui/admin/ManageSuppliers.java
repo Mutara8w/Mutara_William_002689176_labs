@@ -154,8 +154,6 @@ public class ManageSuppliers extends javax.swing.JPanel {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-
-        //int i=1;
         AddSupplier as = new AddSupplier(userProcessContainer, supplierDirectory);
         userProcessContainer.add("AddSupplier", as);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

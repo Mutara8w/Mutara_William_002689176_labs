@@ -19,12 +19,6 @@ public class Feature {
 
     }
 
-    public Feature(Product owner, String name, Object value) {
-        this.owner = owner;
-        this.name = name;
-        this.value = value;
-    }
-
     public Product getOwner() {
         return owner;
     }
@@ -47,6 +41,11 @@ public class Feature {
 
     public void setValue(Object value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 
 }

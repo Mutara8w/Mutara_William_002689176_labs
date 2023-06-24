@@ -131,10 +131,11 @@ public class LoginScreen extends javax.swing.JPanel {
         cmbRoles.removeAllItems();
 
         AdminWorkAreaJPanel adminPanel = new AdminWorkAreaJPanel(mainWorkArea, supplierDirectory);
-        SupplierWorkAreaJPanel supplierPanel = new SupplierWorkAreaJPanel(mainWorkArea, selectedSupplier);
-
         cmbRoles.addItem(adminPanel);
+
+        SupplierWorkAreaJPanel supplierPanel = new SupplierWorkAreaJPanel(mainWorkArea, selectedSupplier);
         cmbRoles.addItem(supplierPanel);
+
     }
 
     public void populateSupplierCombo() {

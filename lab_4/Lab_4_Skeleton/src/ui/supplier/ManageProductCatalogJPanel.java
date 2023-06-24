@@ -67,7 +67,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
         btnView = new javax.swing.JButton();
-        btnCreate = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         imgLogo = new javax.swing.JLabel();
@@ -96,10 +96,10 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCreate.setText("Add Product...");
-        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+        btnAdd.setText("Add Product...");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateActionPerformed(evt);
+                btnAddActionPerformed(evt);
             }
         });
 
@@ -130,7 +130,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSearch)
                         .addGap(18, 18, 18)
-                        .addComponent(btnCreate)
+                        .addComponent(btnAdd)
                         .addGap(18, 18, 18)
                         .addComponent(btnView)
                         .addGap(18, 18, 18)
@@ -142,7 +142,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
                 .addContainerGap(64, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreate, btnDelete, btnSearch, btnView});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdd, btnDelete, btnSearch, btnView});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +159,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete)
                     .addComponent(btnView)
-                    .addComponent(btnCreate)
+                    .addComponent(btnAdd)
                     .addComponent(btnSearch))
                 .addGap(361, 361, 361))
         );
@@ -178,12 +178,12 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         layout.next(workArea);
     }//GEN-LAST:event_btnViewActionPerformed
 
-    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         CreateNewProductJPanel cnpjp = new CreateNewProductJPanel(workArea, supplier);
         workArea.add("SupplierWorkAreaJPanel", cnpjp);
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.next(workArea);
-    }//GEN-LAST:event_btnCreateActionPerformed
+    }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
@@ -205,7 +205,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         refreshTable();
     }//GEN-LAST:event_btnDeleteActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnView;
