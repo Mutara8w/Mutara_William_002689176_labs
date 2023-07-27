@@ -8,7 +8,7 @@ import ecosystem.Role.Role;
 import ecosystem.UserAccount.UserAccountDirectory;
 import ecosystem.WorkQueue.WorkQueue;
 import ecosystem.Employee.EmployeeDirectory;
-import ecosystem.Geographies.Location;
+import ecosystem.Geography.Location;
 import java.util.ArrayList;
 
 /**

@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author raunak
  */
 public class EmployeeDirectory {
-    
+
     private ArrayList<Employee> employeeList;
 
     public EmployeeDirectory() {
@@ -21,8 +21,12 @@ public class EmployeeDirectory {
     public ArrayList<Employee> getEmployeeList() {
         return employeeList;
     }
-    
-    public Employee createEmployee(String name){
+
+    public void setEmployeeList(ArrayList<Employee> employeeList) {
+        this.employeeList = employeeList;
+    }
+
+    public Employee createEmployee(String name) {
         Employee employee = new Employee();
         employee.setEmployeeName(name);
         employeeList.add(employee);

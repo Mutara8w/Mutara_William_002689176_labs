@@ -12,13 +12,14 @@ import ecosystem.Organization.OrganizationDirectory;
  */
 public class EcoSystem {
 
-    private static EcoSystem ecosytem;
+    private static EcoSystem ecosytem;  // multitude of organizations
     private OrganizationDirectory organizationDirectory;
 
     public static EcoSystem getInstance() {
         if (ecosytem == null) {
             ecosytem = new EcoSystem();
         }
+
         return ecosytem;
     }
 

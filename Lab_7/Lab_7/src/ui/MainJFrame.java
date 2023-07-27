@@ -4,12 +4,9 @@
  */
 package ui;
 
-import ecosystem.EcoSystem;
 import ecosystem.ConfigureEcoSystem;
-import ecosystem.Organization.Organization;
-import ecosystem.UserAccount.UserAccount;
+import ecosystem.EcoSystem;
 import java.awt.CardLayout;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -21,13 +18,12 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    private EcoSystem business;
+    private final EcoSystem ecosystem;
 
     public MainJFrame() {
         initComponents();
-        business = ConfigureEcoSystem.configure();
+        ecosystem = ConfigureEcoSystem.configure();
         setSize(800, 600);
-
         initLoginScreen();
     }
 
@@ -57,8 +53,10 @@ public class MainJFrame extends javax.swing.JFrame {
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the
+         * default look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -79,10 +77,8 @@ public class MainJFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainJFrame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MainJFrame().setVisible(true);
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -91,7 +87,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void initLoginScreen() {
 
-        JPanel loginScreen = new LoginScreen(mainWorkArea, business);
+        JPanel loginScreen = new LoginScreen(mainWorkArea, ecosystem);
         mainWorkArea.add("LoginScreen", loginScreen);
         CardLayout layout = (CardLayout) mainWorkArea.getLayout();
         layout.next(mainWorkArea);

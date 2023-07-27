@@ -4,11 +4,11 @@
  */
 package ecosystem;
 
-import ecosystem.Organization.SystemAdministration.SystemAdminOrganization;
-import ecosystem.Role.SystemAdministrationRole.SystemAdministrationRole;
-import ecosystem.UserAccount.UserAccount;
 import ecosystem.Employee.Employee;
 import ecosystem.Employee.Employee.EmployeePosition;
+import ecosystem.Organization.SystemAdminOrganization;
+import ecosystem.Role.SystemAdministrationRole;
+import ecosystem.UserAccount.UserAccount;
 
 /**
  *

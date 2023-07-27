@@ -4,9 +4,9 @@
  */
 package ecosystem.UserAccount;
 
-import ecosystem.WorkQueue.WorkQueue;
 import ecosystem.Employee.Employee;
 import ecosystem.Role.Role;
+import ecosystem.WorkQueue.WorkQueue;
 
 /**
  *
@@ -18,7 +18,7 @@ public class UserAccount {
     private String password;
     private Employee employeeName;
     private Role ecosystemRole;
-    private WorkQueue workQueue;
+    private final WorkQueue workQueue;
 
     public UserAccount() {
         workQueue = new WorkQueue();

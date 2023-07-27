@@ -4,8 +4,6 @@
  */
 package ecosystem.Organization;
 
-import ecosystem.Organization.PHD.PHDOrganization;
-import ecosystem.Organization.CDC.CDCOrganization;
 import ecosystem.Organization.Organization.Type;
 import java.util.ArrayList;
 

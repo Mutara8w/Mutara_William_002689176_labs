@@ -2,14 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ecosystem.Role.PHDRole;
+package ecosystem.Role;
 
 import ecosystem.EcoSystem;
 import ecosystem.Organization.Organization;
-import ecosystem.Role.Role;
 import ecosystem.UserAccount.UserAccount;
-import ui.PHDRole.LabAssistantWorkAreaJPanel;
 import javax.swing.JPanel;
+import ui.PHDRole.LabAssistantWorkAreaJPanel;
 
 /**
  *
@@ -22,9 +21,9 @@ public class PHDRole extends Role {
     }
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem ecosystem) {
         this.type = RoleType.PHD_ROLE;
-        return new LabAssistantWorkAreaJPanel(userProcessContainer, account, organization, business);
+        return new LabAssistantWorkAreaJPanel(userProcessContainer, account, organization, ecosystem);
     }
 
 }

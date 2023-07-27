@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ecosystem.Organization.SystemAdministration;
+package ecosystem.Organization;
 
 import ecosystem.Organization.Organization;
-import ecosystem.Role.SystemAdministrationRole.SystemAdministrationRole;
+import ecosystem.Role.SystemAdministrationRole;
 import ecosystem.Role.Role;
 import java.util.ArrayList;
 

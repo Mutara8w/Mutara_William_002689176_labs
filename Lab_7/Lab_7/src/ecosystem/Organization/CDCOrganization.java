@@ -2,10 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ecosystem.Organization.PHD;
+package ecosystem.Organization;
 
-import ecosystem.Organization.Organization;
-import ecosystem.Role.PHDRole.PHDRole;
+import ecosystem.Role.CDCRole;
 import ecosystem.Role.Role;
 import java.util.ArrayList;
 
@@ -13,20 +12,17 @@ import java.util.ArrayList;
  *
  * @author raunak
  */
-public class PHDOrganization extends Organization{
+public class CDCOrganization extends Organization {
 
-    public PHDOrganization() {
-        super(Organization.Type.PHD.getValue());
+    public CDCOrganization() {
+        super(Organization.Type.CDC.getValue());
     }
 
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList<>();
-        roles.add(new PHDRole());
+        roles.add(new CDCRole());
         return roles;
     }
-     
-   
-    
-    
+
 }

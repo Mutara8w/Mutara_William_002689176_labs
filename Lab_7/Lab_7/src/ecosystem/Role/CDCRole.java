@@ -2,15 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ecosystem.Role.CDCRole;
+package ecosystem.Role;
 
 import ecosystem.EcoSystem;
-import ecosystem.Organization.CDC.CDCOrganization;
+import ecosystem.Organization.CDCOrganization;
 import ecosystem.Organization.Organization;
-import ecosystem.Role.Role;
 import ecosystem.UserAccount.UserAccount;
-import ui.CDCRole.DoctorWorkAreaJPanel;
 import javax.swing.JPanel;
+import ui.CDCRole.DoctorWorkAreaJPanel;
 
 /**
  *
@@ -23,9 +22,9 @@ public class CDCRole extends Role {
     }
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem ecosystem) {
         this.type = RoleType.CDC_ROLE;
-        return new DoctorWorkAreaJPanel(userProcessContainer, account, (CDCOrganization) organization, business);
+        return new DoctorWorkAreaJPanel(userProcessContainer, account, (CDCOrganization) organization, ecosystem);
     }
 
 }

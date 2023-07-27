@@ -5,7 +5,7 @@
 package ui.CDCRole;
 
 import ecosystem.EcoSystem;
-import ecosystem.Organization.PHD.PHDOrganization;
+import ecosystem.Organization.PHDOrganization;
 import ecosystem.Organization.Organization;
 import ecosystem.UserAccount.UserAccount;
 import ecosystem.WorkQueue.LabTestWorkRequest;
