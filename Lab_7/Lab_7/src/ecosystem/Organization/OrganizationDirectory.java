@@ -19,6 +19,10 @@ public class OrganizationDirectory {
         organizationList = new ArrayList<>();
     }
 
+    public void addOrganization(Organization organization) {
+        organizationList.add(organization);
+    }
+
     public ArrayList<Organization> getOrganizationList() {
         return organizationList;
     }

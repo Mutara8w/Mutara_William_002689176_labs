@@ -17,27 +17,23 @@ import ecosystem.UserAccount.UserAccount;
 public class ConfigureEcoSystem {
 
     public static EcoSystem configure() {
-
         EcoSystem ecosystem = EcoSystem.getInstance();
 
-        SystemAdminOrganization thisAdminOrganization = new SystemAdminOrganization();
-        ecosystem.getOrganizationDirectory().getOrganizationList().add(thisAdminOrganization);
+        SystemAdminOrganization adminOrganization = new SystemAdminOrganization();
+        ecosystem.getOrganizationDirectory().addOrganization(adminOrganization);
 
         Employee systemAdmin = new Employee();
-
         systemAdmin.setEmployeeName("Administrator");
         systemAdmin.setEmploymentPosition(EmployeePosition.SYSTEM_ADMIN);
 
-        if (systemAdmin.getEmploymentPosition() == EmployeePosition.SYSTEM_ADMIN && "Administrator".equals(systemAdmin.getEmployeeName())) {
-            UserAccount admin = new UserAccount();
-            admin.setUsername("admin");
-            admin.setPassword("admin");
-            admin.setEcosystemRole(new SystemAdministrationRole());
-            admin.setEmployeeName(systemAdmin);
+        UserAccount admin = new UserAccount();
+        admin.setUsername("admin");
+        admin.setPassword("admin");
+        admin.setEcosystemRole(new SystemAdministrationRole());
+        admin.setEmployeeName(systemAdmin);
 
-            thisAdminOrganization.getEmployeeDirectory().getEmployeeList().add(systemAdmin);
-            thisAdminOrganization.getUserAccountDirectory().getUserAccountList().add(admin);
-        }
+        adminOrganization.getEmployeeDirectory().addEmployee(systemAdmin);
+        adminOrganization.getUserAccountDirectory().addUserAccount(admin);
 
         return ecosystem;
     }

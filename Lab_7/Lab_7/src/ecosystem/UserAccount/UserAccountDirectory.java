@@ -20,6 +20,11 @@ public class UserAccountDirectory {
         userAccountList = new ArrayList<>();
     }
 
+    public UserAccount addUserAccount(UserAccount user) {
+        userAccountList.add(user);
+        return user;
+    }
+
     public ArrayList<UserAccount> getUserAccountList() {
         return userAccountList;
     }

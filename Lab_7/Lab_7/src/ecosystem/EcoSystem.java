@@ -10,17 +10,17 @@ import ecosystem.Organization.OrganizationDirectory;
  *
  * @author Administrator
  */
-public class EcoSystem {
+public final class EcoSystem {
 
-    private static EcoSystem ecosytem;  // multitude of organizations
-    private OrganizationDirectory organizationDirectory;
+    private static EcoSystem ecosytem; // singleton pattern
+    private OrganizationDirectory organizationDirectory; // organization directory
 
-    public static EcoSystem getInstance() {
-        if (ecosytem == null) {
-            ecosytem = new EcoSystem();
+    public static EcoSystem getInstance() { // singleton pattern
+        if (ecosytem == null) { // if no instance of ecosystem exists
+            ecosytem = new EcoSystem(); // create a new instance
         }
 
-        return ecosytem;
+        return ecosytem; // return the instance
     }
 
     private EcoSystem() {

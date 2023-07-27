@@ -18,6 +18,11 @@ public class EmployeeDirectory {
         employeeList = new ArrayList<>();
     }
 
+    public Employee addEmployee(Employee employee) {
+        employeeList.add(employee);
+        return employee;
+    }
+
     public ArrayList<Employee> getEmployeeList() {
         return employeeList;
     }
