@@ -12,15 +12,15 @@ import ecosystem.Organization.OrganizationDirectory;
  */
 public final class EcoSystem {
 
-    private static EcoSystem ecosytem; // singleton pattern
-    private OrganizationDirectory organizationDirectory; // organization directory
+    private static EcoSystem ecosytem;
+    private OrganizationDirectory organizationDirectory;
 
-    public static EcoSystem getInstance() { // singleton pattern
-        if (ecosytem == null) { // if no instance of ecosystem exists
-            ecosytem = new EcoSystem(); // create a new instance
+    public static EcoSystem getInstance() {
+        if (ecosytem == null) {
+            ecosytem = new EcoSystem();
         }
 
-        return ecosytem; // return the instance
+        return ecosytem;
     }
 
     private EcoSystem() {
