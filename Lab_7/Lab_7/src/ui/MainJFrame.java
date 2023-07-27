@@ -4,10 +4,10 @@
  */
 package ui;
 
-import business.Business;
-import business.ConfigureABusiness;
-import business.Organization.Organization;
-import business.UserAccount.UserAccount;
+import ecosystem.EcoSystem;
+import ecosystem.ConfigureEcoSystem;
+import ecosystem.Organization.Organization;
+import ecosystem.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -21,11 +21,11 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    private Business business;
+    private EcoSystem business;
 
     public MainJFrame() {
         initComponents();
-        business = ConfigureABusiness.configure();
+        business = ConfigureEcoSystem.configure();
         setSize(800, 600);
 
         initLoginScreen();

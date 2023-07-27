@@ -5,9 +5,9 @@
  */
 package ui;
 
-import business.Business;
-import business.Organization.Organization;
-import business.UserAccount.UserAccount;
+import ecosystem.EcoSystem;
+import ecosystem.Organization.Organization;
+import ecosystem.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -20,13 +20,13 @@ public class MainScreen extends javax.swing.JPanel {
     JPanel mainWorkArea;
     UserAccount userAccount;
     Organization organization;
-    Business business;
+    EcoSystem business;
     
     
     /**
      * Creates new form MainScreen
      */
-    public MainScreen(JPanel mainWorkArea, UserAccount userAccount, Organization organization, Business business){
+    public MainScreen(JPanel mainWorkArea, UserAccount userAccount, Organization organization, EcoSystem business){
         initComponents();
         this.mainWorkArea = mainWorkArea;
         this.userAccount = userAccount;
@@ -123,10 +123,10 @@ public class MainScreen extends javax.swing.JPanel {
 
     private void initUserWorkArea() {
         
-        lblWelcome.setText("Welcome " + ((userAccount.getEmployee() != null) ? userAccount.getEmployee().getName() : userAccount.getUsername()) + "!");
+        lblWelcome.setText("Welcome " + ((userAccount.getEmployeeName() != null) ? userAccount.getEmployeeName().getEmployeeName() : userAccount.getUsername()) + "!");
         
         CardLayout layout = (CardLayout) workArea.getLayout();
-        workArea.add("workArea", userAccount.getRole().createWorkArea(workArea, userAccount, organization, business));
+        workArea.add("workArea", userAccount.getEcosystemRole().createWorkArea(workArea, userAccount, organization, business));
         layout.next(workArea);
     }
 }

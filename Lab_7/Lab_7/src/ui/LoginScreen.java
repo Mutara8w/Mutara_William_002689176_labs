@@ -5,9 +5,9 @@
  */
 package ui;
 
-import business.Business;
-import business.Organization.Organization;
-import business.UserAccount.UserAccount;
+import ecosystem.EcoSystem;
+import ecosystem.Organization.Organization;
+import ecosystem.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -19,12 +19,12 @@ import javax.swing.JPanel;
 public class LoginScreen extends javax.swing.JPanel {
 
     JPanel mainWorkArea;
-    Business business;
+    EcoSystem business;
     
     /**
      * Creates new form LoginScreen
      */
-    public LoginScreen(JPanel mainWorkArea, Business business) {
+    public LoginScreen(JPanel mainWorkArea, EcoSystem business) {
         initComponents();
         
         this.mainWorkArea = mainWorkArea;
