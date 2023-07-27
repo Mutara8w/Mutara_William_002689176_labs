@@ -21,18 +21,22 @@ public class MainScreen extends javax.swing.JPanel {
     UserAccount userAccount;
     Organization organization;
     EcoSystem business;
-    
-    
+
     /**
      * Creates new form MainScreen
+     *
+     * @param mainWorkArea
+     * @param userAccount
+     * @param organization
+     * @param business
      */
-    public MainScreen(JPanel mainWorkArea, UserAccount userAccount, Organization organization, EcoSystem business){
+    public MainScreen(JPanel mainWorkArea, UserAccount userAccount, Organization organization, EcoSystem business) {
         initComponents();
         this.mainWorkArea = mainWorkArea;
         this.userAccount = userAccount;
-        this.organization = organization;                
+        this.organization = organization;
         this.business = business;
-        
+
         initUserWorkArea();
     }
 
@@ -49,15 +53,17 @@ public class MainScreen extends javax.swing.JPanel {
         menuPanel = new javax.swing.JPanel();
         lblWelcome = new javax.swing.JLabel();
         btnLogOut = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         workArea = new javax.swing.JPanel();
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        menuPanel.setBackground(new java.awt.Color(255, 255, 255));
+        menuPanel.setBackground(new java.awt.Color(0, 204, 255));
 
-        lblWelcome.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lblWelcome.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblWelcome.setText("<WelcomeMsg>");
 
+        btnLogOut.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnLogOut.setText("Log Out");
         btnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,30 +71,36 @@ public class MainScreen extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        jLabel1.setText("Administrative Work Area");
+
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 362, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
                 .addComponent(btnLogOut)
                 .addGap(26, 26, 26))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
+                .addContainerGap(566, Short.MAX_VALUE)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLogOut)
                     .addComponent(lblWelcome)
-                    .addComponent(btnLogOut))
+                    .addComponent(jLabel1))
                 .addContainerGap())
         );
 
         splitPane.setTopComponent(menuPanel);
 
-        workArea.setBackground(new java.awt.Color(255, 255, 255));
+        workArea.setBackground(new java.awt.Color(255, 153, 0));
         workArea.setLayout(new java.awt.CardLayout());
         splitPane.setRightComponent(workArea);
 
@@ -115,6 +127,7 @@ public class MainScreen extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogOut;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblWelcome;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JSplitPane splitPane;
@@ -122,9 +135,11 @@ public class MainScreen extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void initUserWorkArea() {
-        
-        lblWelcome.setText("Welcome " + ((userAccount.getEmployeeName() != null) ? userAccount.getEmployeeName().getEmployeeName() : userAccount.getUsername()) + "!");
-        
+
+        lblWelcome.setText("Welcome "
+                + ((userAccount.getEmployeeName() != null) ? userAccount.getEmployeeName().getEmployeeName() : userAccount.getUsername())
+                + "!");
+
         CardLayout layout = (CardLayout) workArea.getLayout();
         workArea.add("workArea", userAccount.getEcosystemRole().createWorkArea(workArea, userAccount, organization, business));
         layout.next(workArea);

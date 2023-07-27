@@ -17,42 +17,48 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
-    private OrganizationDirectory directory;
-    private JPanel userProcessContainer;
-    
+    OrganizationDirectory directory;
+    JPanel userProcessContainer;
+
     /**
      * Creates new form ManageOrganizationJPanel
+     *
+     * @param userProcessContainer
+     * @param directory
      */
-    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory) {
+    public ManageOrganizationJPanel(JPanel userProcessContainer, OrganizationDirectory directory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
-        
+
         populateTable();
         populateCombo();
     }
-    
-    private void populateCombo(){
+
+    @SuppressWarnings("unchecked")
+    private void populateCombo() {
         cmbOrganizations.removeAllItems();
-        for (Type type : Organization.Type.values()){
-            if (!type.getValue().equals(Type.SYSTEM_ADMINISTRATION.getValue()))
+        for (Type type : Organization.Type.values()) {
+            if (!type.getValue().equals(Type.SYSTEM_ADMINISTRATION.getValue())) {
                 cmbOrganizations.addItem(type);
+            }
         }
     }
 
-    private void populateTable(){
+    private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) tblOrganizations.getModel();
-        
+
         model.setRowCount(0);
-        
-        for (Organization organization : directory.getOrganizationList()){
+
+        for (Organization organization : directory.getOrganizationList()) {
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
             row[1] = organization.getOrganizationName();
-            
+
             model.addRow(row);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,24 +78,24 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         lblOrganizationList = new javax.swing.JLabel();
         lblOrganizationAdd = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(255, 153, 0));
 
         tblOrganizations.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Name"
+                "ID", "Name", "Country", "State", "Address", "Contact"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, true, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -117,7 +123,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         lblSelectOrgType.setText("Select Organization Type:");
 
-        btnBack.setText("<< Back");
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);

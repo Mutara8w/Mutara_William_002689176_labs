@@ -3,7 +3,6 @@
  *
  * Created on October 10, 2008, 8:50 AM
  */
-
 package ui.SystemAdministrationRole;
 
 import ecosystem.EcoSystem;
@@ -12,19 +11,23 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author  raunak
+ * @author raunak
  */
 public class AdminWorkAreaJPanel extends javax.swing.JPanel {
-    
+
     JPanel userProcessContainer;
     EcoSystem business;
-    /** Creates new form AdminWorkAreaJPanel */
+
+    /** Creates new form AdminWorkAreaJPanel
+     *
+     * @param userProcessContainer
+     * @param business */
     public AdminWorkAreaJPanel(JPanel userProcessContainer, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.business = business;
     }
-    
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -36,10 +39,11 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         userJButton = new javax.swing.JButton();
         manageEmployeeJButton = new javax.swing.JButton();
         manageOrganizationJButton = new javax.swing.JButton();
-        lblTitle = new javax.swing.JLabel();
+        lblQuestion = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(255, 153, 0));
 
+        userJButton.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         userJButton.setText("Manage Users");
         userJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,6 +51,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        manageEmployeeJButton.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         manageEmployeeJButton.setText("Manage Employees");
         manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +59,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        manageOrganizationJButton.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         manageOrganizationJButton.setText("Manage Organizations");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,21 +67,22 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblTitle.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        lblTitle.setText("Administrative Work Area");
+        lblQuestion.setFont(new java.awt.Font("Courier New", 3, 18)); // NOI18N
+        lblQuestion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblQuestion.setText("What would you like to do today?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(manageEmployeeJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(manageOrganizationJButton)
                     .addComponent(userJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTitle))
-                .addContainerGap())
+                    .addComponent(lblQuestion)
+                    .addComponent(manageOrganizationJButton)
+                    .addComponent(manageEmployeeJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(436, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {manageEmployeeJButton, manageOrganizationJButton, userJButton});
@@ -83,16 +90,19 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(lblTitle)
-                .addGap(31, 31, 31)
+                .addContainerGap()
+                .addComponent(lblQuestion)
+                .addGap(18, 18, 18)
                 .addComponent(manageOrganizationJButton)
                 .addGap(18, 18, 18)
                 .addComponent(manageEmployeeJButton)
                 .addGap(18, 18, 18)
                 .addComponent(userJButton)
-                .addContainerGap())
+                .addContainerGap(428, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblQuestion, manageEmployeeJButton, manageOrganizationJButton, userJButton});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
@@ -111,7 +121,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
+
     }//GEN-LAST:event_manageEmployeeJButtonActionPerformed
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
@@ -121,13 +131,13 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
-    
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblQuestion;
     private javax.swing.JButton manageEmployeeJButton;
     private javax.swing.JButton manageOrganizationJButton;
     private javax.swing.JButton userJButton;
     // End of variables declaration//GEN-END:variables
-    
+
 }

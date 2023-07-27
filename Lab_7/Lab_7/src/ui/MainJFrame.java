@@ -39,8 +39,10 @@ public class MainJFrame extends javax.swing.JFrame {
         mainWorkArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setBackground(new java.awt.Color(255, 153, 0));
 
-        mainWorkArea.setBackground(new java.awt.Color(255, 255, 255));
+        mainWorkArea.setBackground(new java.awt.Color(255, 153, 0));
         mainWorkArea.setLayout(new java.awt.CardLayout());
         getContentPane().add(mainWorkArea, java.awt.BorderLayout.PAGE_START);
 
