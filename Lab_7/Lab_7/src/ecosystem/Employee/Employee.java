@@ -17,7 +17,7 @@ public class Employee {
     private EmployeePosition employmentPosition;
 
     public enum EmployeePosition {
-        SYSTEM_ADMIN, REGISTERED_DOCTOR, REGISTERED_NURSE, INVENTORY_MANAGER;
+        SYSTEM_ADMIN;
     }
 
     public Employee() {
